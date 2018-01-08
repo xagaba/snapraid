@@ -1,2 +1,2 @@
 # snapraid
-Snapraid docker container
+Snapraid docker container (Alpine fork of carlba/snapraid)
