@@ -23,5 +23,5 @@ if [ ! -L /etc/snapraid.conf ]; then
     ln -s /config/snapraid.conf /etc/snapraid.conf
 fi
 
-/usr/sbin/crond -c /etc/crontabs -f
+/usr/sbin/crond -d 6 -c /etc/crontabs -f 
 
