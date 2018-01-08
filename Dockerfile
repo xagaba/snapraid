@@ -11,6 +11,6 @@ RUN echo '0 3 * * * root /usr/bin/python /app/snapraid-runner/snapraid-runner.py
 VOLUME /mnt /config
 
 COPY /docker-entry.sh  /
-RUN chmod 544 /docker-entrypoint.sh
+RUN chmod 544 /docker-entry.sh
 
 CMD ["/docker-entry.sh"]
