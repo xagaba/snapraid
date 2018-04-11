@@ -37,6 +37,16 @@ This container is configured using two files `snapraid.conf` and `snapraid-runne
 
 It is based on phusion-baseimage with ssh removed, for shell access whilst the container is running do `docker exec -it snapraid /bin/bash`.
 
+### Detecting move operations
+You'll probably notice when snapraid runs it gives a warning like `WARNING! UUID is unsupported for disks` and it may not detect moved files. Instead it seems them as copied and removed. In order to detect the file moves you can run with the following additional paramters.
+
+```
+--privileged --mount type=bind,source=/dev/disk,target=/dev/disk
+```
+
+* `--privileged` will share all your devices (ie `/dev/sdb`, `/dev/sdb1`, etc) with your container. Alternatively, you could probably use something like `--device /dev/sdb:/dev/sdb --device /dev/sdb1:/dev/sdb1`, but you'd need to do it for each drive you have setup.
+* `--mount type=bind,source=/dev/disk,target=/dev/disk` mounts the disk listing into the container, so snapraid can run something like `ls /dev/disk/by-uuid` to get a list of all the disks by UUID
+
 ### User / Group Identifiers
 
 **TL;DR** - The `PGID` and `PUID` values set the user / group you'd like your container to 'run as' to the host OS. This can be a user you've created or even root (not recommended).
