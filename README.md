@@ -1,5 +1,5 @@
 
-This is the Alpine version with Snapraid 11.2
+This is the Alpine version with Snapraid 11.3
 
 ![http://linuxserver.io](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver_medium.png)
 
