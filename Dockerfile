@@ -1,3 +1,4 @@
+# Snapraid 1.3
 FROM alpine:latest
 
 RUN apk --update add python git smartmontools && \
