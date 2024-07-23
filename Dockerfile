@@ -1,4 +1,4 @@
-# Snapraid 12.0
+# Snapraid 12.3
 FROM alpine:latest
 
 RUN apk --update add python3 git smartmontools tzdata && \
